@@ -8,6 +8,10 @@ const btnAdd = document.getElementById("btnAdd");
 
 function renderMemes(memes) {
     loadingText.style.display = "none";
+    const memesCountElement = document.getElementById("memesCount");
+    if (memesCountElement) {
+        memesCountElement.textContent = `Всего мемов: ${memes.length}`;
+    }
     if (memes.length === 0) {
         memesGrid.innerHTML = '<p class="empty-text">Мемов пока нет.</p>';
         return;
